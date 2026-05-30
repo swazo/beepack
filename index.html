@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEEPack - Supplier Kemasan UMKM</title>
+<meta name="description" content="BEEPack - Supplier kemasan berkualitas untuk UMKM, cafe, restoran dan bisnis minuman.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:#f8fafc;color:#222}
+header{position:sticky;top:0;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.08);z-index:999}
+.container{width:min(1200px,92%);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-size:30px;font-weight:800;color:#f59e0b}
+.logo span{color:#111}
+.btn{background:#25D366;color:#fff;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:600}
+.hero{padding:80px 0;background:linear-gradient(135deg,#fef3c7,#fff)}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:56px;line-height:1.1;margin-bottom:15px}
+.hero p{font-size:18px;color:#555;margin-bottom:25px}
+.hero-card{background:#fff;padding:30px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.section{padding:70px 0}
+.title{text-align:center;font-size:38px;margin-bottom:35px}
+.search{max-width:600px;margin:0 auto 30px}
+.search input{width:100%;padding:15px;border:1px solid #ddd;border-radius:14px}
+.categories{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:30px}
+.cat{padding:10px 18px;background:#fff;border-radius:999px;border:1px solid #ddd}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.img{height:180px;background:linear-gradient(135deg,#fde68a,#f59e0b)}
+.card-body{padding:18px}
+.badge{display:inline-block;background:#ef4444;color:#fff;padding:5px 10px;border-radius:999px;font-size:12px}
+.price{font-size:24px;font-weight:700;color:#ef4444;margin:10px 0}
+.order{display:block;text-align:center;background:#25D366;color:#fff;text-decoration:none;padding:12px;border-radius:12px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.feature{background:#fff;padding:25px;border-radius:20px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.testi{background:#fff;padding:25px;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.faq details{background:#fff;padding:18px;border-radius:14px;margin-bottom:10px}
+.cta{background:#f59e0b;color:#fff;text-align:center;padding:70px 20px}
+footer{background:#111;color:#fff;text-align:center;padding:30px}
+.wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;text-decoration:none;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px}
+@media(max-width:768px){
+.hero-grid{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+.title{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">BEE<span>Pack</span></div>
+<a class="btn" href="https://wa.me/62895412829622">Hubungi Kami</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<h1>Kemasan Berkualitas untuk UMKM & Bisnis Anda</h1>
+<p>Supplier kemasan terpercaya. Cocok untuk cafe, restoran, minuman kekinian, catering, dan usaha makanan.</p>
+<a class="btn" href="https://wa.me/62895412829622?text=Halo%20BEEPack,%20saya%20ingin%20bertanya%20tentang%20produk.">Pesan Sekarang</a>
+</div>
+<div class="hero-card">
+<h2>✓ Harga Grosir</h2><br>
+<h2>✓ Stok Lengkap</h2><br>
+<h2>✓ Pengiriman Cepat</h2><br>
+<h2>✓ Order Mudah via WhatsApp</h2>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="title">Cari Produk</h2>
+<div class="search"><input id="search" placeholder="Cari produk..."></div>
+<div class="categories">
+<div class="cat">Cup Plastik</div>
+<div class="cat">Paper Cup</div>
+<div class="cat">Paper Bowl</div>
+<div class="cat">Box Makanan</div>
+<div class="cat">Standing Pouch</div>
+</div>
+
+<div class="grid" id="products">
+<script>
+const items=[
+["Cup Plastik 16 Oz","35000"],
+["Cup Plastik 22 Oz","45000"],
+["Paper Cup","50000"],
+["Paper Bowl","55000"],
+["Box Makanan","60000"],
+["Standing Pouch","75000"]
+];
+document.write(items.map(i=>`
+<div class="card product">
+<div class="img"></div>
+<div class="card-body">
+<span class="badge">Best Seller</span>
+<h3>${i[0]}</h3>
+<div class="price">Rp ${i[1]}</div>
+<a class="order" href="https://wa.me/62895412829622?text=Saya%20ingin%20pesan%20${encodeURIComponent(i[0])}">Pesan via WhatsApp</a>
+</div></div>`).join(""));
+</script>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="title">Kenapa BEEPack?</h2>
+<div class="features">
+<div class="feature"><h3>Harga Kompetitif</h3><p>Cocok untuk reseller dan UMKM.</p></div>
+<div class="feature"><h3>Kualitas Terjamin</h3><p>Produk rapi dan kuat.</p></div>
+<div class="feature"><h3>Respon Cepat</h3><p>Order langsung lewat WhatsApp.</p></div>
+<div class="feature"><h3>Pengiriman Cepat</h3><p>Diproses secepat mungkin.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="title">Testimoni</h2>
+<div class="grid">
+<div class="testi">★★★★★<br><br>Kualitas kemasan bagus dan harga bersaing.</div>
+<div class="testi">★★★★★<br><br>Pengiriman cepat dan admin responsif.</div>
+<div class="testi">★★★★★<br><br>Sudah langganan untuk kebutuhan cafe.</div>
+</div>
+</div>
+</section>
+
+<section class="section faq">
+<div class="container">
+<h2 class="title">FAQ</h2>
+<details><summary>Apakah bisa kirim luar kota?</summary><p>Ya, kami melayani pengiriman ke berbagai daerah.</p></details>
+<details><summary>Apakah ada harga grosir?</summary><p>Tersedia harga grosir untuk pembelian tertentu.</p></details>
+<details><summary>Cara pesan bagaimana?</summary><p>Klik tombol WhatsApp dan kirim kebutuhan Anda.</p></details>
+</div>
+</section>
+
+<section class="cta">
+<h2>Siap Order Kemasan?</h2>
+<p>Hubungi BEEPack sekarang juga.</p><br>
+<a class="btn" href="https://wa.me/62895412829622">Pesan via WhatsApp</a>
+</section>
+
+<footer>
+<h3>BEEPack</h3>
+<p>Supplier Kemasan untuk UMKM Indonesia</p>
+<p>WhatsApp: 0895-4128-29622</p>
+</footer>
+
+<a class="wa" href="https://wa.me/62895412829622">💬</a>
+
+<script>
+document.getElementById('search').addEventListener('keyup',function(){
+const v=this.value.toLowerCase();
+document.querySelectorAll('.product').forEach(p=>{
+p.style.display=p.innerText.toLowerCase().includes(v)?'block':'none';
+});
+});
+</script>
+
+</body>
+</html>
